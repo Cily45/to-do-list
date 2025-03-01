@@ -1,0 +1,56 @@
+
+h2 {
+  text-align: center;
+  color: #e0e0e0;
+}
+
+form {
+  text-align: center;
+  margin:  2em auto;
+}
+
+input {
+  border-radius: 5px;
+  border: transparent;
+  padding: 5px;
+  background-color: #B0B0B0;
+
+}
+
+#valid-btn{
+  background-color: blueviolet;
+  border-radius: 5px;
+  border-color: transparent;
+  margin-left: 10px;
+  color: #B0B0B0;
+}
+
+ul{
+  width: 25%;
+  margin: auto;
+  border: blueviolet solid 1px;
+  border-radius: 15px;
+  background-color: #1F1F1F;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  color: #B0B0B0;
+}
+
+li > * {
+  margin-left: 10px;
+}
+
+.todo-btn{
+  background-color: transparent;
+  border: none;
+  color: #CF6679;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #B0B0B0;
+}

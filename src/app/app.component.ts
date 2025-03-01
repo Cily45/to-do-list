@@ -22,6 +22,7 @@ export class AppComponent {
         id: this.lastId, value: input.value, isChecked: false
       });
       input.value = '';
+      this.sortTodos()
     }
   }
 
