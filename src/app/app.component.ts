@@ -1,30 +1,25 @@
 import {Component, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {Todo} from './models/Todo';
-import {TodoComponent} from './todo/todo.component';
+import {Todo} from './Todo';
 import {FormsModule} from '@angular/forms';
+import {from} from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TodoComponent, FormsModule],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'todolist';
-  todos!: Todo[];
-  value: string = "";
+  todos: Todo[]= [
+   {id: 1, value : "fsf", isChecked : true}
+ ];
 
-
-  ngOnInit(): void {
-    this.todos = []
-    this.todos.push(new Todo("fdsfsd"));
+  addTodo(event: SubmitEvent, input: string): void{
+    event.preventDefault();
+    this.todos.push({
+      id: 1, value : input, isChecked : false
+    });
   }
-
-  addTodo(): void{
-    if(this.value.length > 0){
-      this.todos.push(new Todo(this.value));
-      this.value = "";
-    }
-  }
+  protected readonly from = from;
 }

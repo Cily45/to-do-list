@@ -1,8 +1,15 @@
 <h2>TODOLIST</h2>
-<input type="text" [(ngModel)]="value" placeholder="Que voulez vous ajoutez?">
-<button (click)="addTodo()">+</button>
+<form (submit)="addTodo($event, input.value)">
+  <input type="text" #input placeholder="Que voulez vous ajoutez?">
+  <button>+</button>
+</form>
 <ul>
-  @for (todo of todos; track todo.value){
-    <app-todo [Todo]="todo"/>
+  @for (todo of todos; track todos){
+    <li>
+      <p>{{todo.value}}</p>
+      <input type="checkbox" [checked]="todo.isChecked">
+      <button><i class="fa-solid fa-xmark"></i></button>
+    </li>
   }
+
 </ul>
