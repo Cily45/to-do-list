@@ -4,11 +4,9 @@
   <button>+</button>
 </form>
 <ul>
-  @for (todo of todos; track todos){
-    <li>
+    <li *ngFor="let todo of todos;">
       <p>{{todo.id}}: {{todo.value}}</p>
       <input type="checkbox" (click)="changeCheckbox(todo.id)">
       <button (click)="deleteTodo(todo.id)"><i class="fa-solid fa-xmark"></i></button>
     </li>
-  }
 </ul>

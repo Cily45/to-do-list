@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
 import {Todo} from './Todo';
 import {FormsModule} from '@angular/forms';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule],
+  imports: [FormsModule, NgForOf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -35,7 +36,7 @@ export class AppComponent {
   changeCheckbox(id: number) {
     let index: number = this.findIndexTodo(id)
     this.todos[index].isChecked = !this.todos[index].isChecked;
-    //this.sortTodos()
+    this.sortTodos()
   }
 
   findIndexTodo(id: number): number {
