@@ -1,5 +1,8 @@
 <h2>TODOLIST</h2>
-<input type="text" placeholder="Que voulez vous ajoutez?">
-<button>+</button>
-
-
+<input type="text" #input placeholder="Que voulez vous ajoutez?">
+<button (click)="addTodo(input.value)">+</button>
+<ul>
+  @for (todo of todos; track todo.value){
+    <app-todo [Todo]="todo"/>
+  }
+</ul>

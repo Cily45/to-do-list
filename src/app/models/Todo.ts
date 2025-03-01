@@ -1,6 +1,10 @@
 export class Todo{
+  isChecked: boolean = false;
   constructor(
     public value: string,
-    public isChecked:boolean
   ) {}
+
+  checked(): void{
+    this.isChecked = !this.isChecked;
+  }
 }

@@ -1,1 +1,4 @@
-<p>todo works!</p>
+<li>
+  <input type="checkbox" (click)="Todo.checked()" [checked]="Todo.isChecked">
+  <p>{{ Todo.value }}</p>
+</li>
