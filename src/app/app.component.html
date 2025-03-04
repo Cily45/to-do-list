@@ -1,14 +1,1 @@
-<h2>TODOLIST</h2>
-<form (submit)="addTodo(input)">
-  <input type="text" #input placeholder="Que voulez vous ajoutez?">
-  <button id="valid-btn">+</button>
-</form>
-<ul >
-    <li *ngFor="let todo of todos;">
-      <div>
-        <input type="checkbox" name="{{todo.id}}" (click)="changeCheckbox(todo.id)">
-        <label for="{{todo.id}}">{{todo.value}}</label>
-      </div>
-      <button class="todo-btn" (click)="deleteTodo(todo.id)"><i class="fa-solid fa-xmark"></i></button>
-    </li>
-</ul>
+<app-todolist/>
